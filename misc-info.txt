@@ -1,2 +1,5 @@
+// TODO can't get damn google cloud sdk to work in IDE terminal
+// may need to configure it as a new terminal
 windows google cloud sdk command
     $GCSDK = "C:\Users\final\AppData\Local\Google\Cloud SDK"
+    C:\Windows\system32\cmd.exe /k ""C:\Users\final\AppData\Local\Google\Cloud SDK\cloud_env.bat""
