@@ -35,3 +35,6 @@ mvnw.cmd
 maven-wrapper.jar
 maven-wrapper.properties
 MavenWrapperDownloader.java
+
+### React ###
+src/main/react/node_modules
