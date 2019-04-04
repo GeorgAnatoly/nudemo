@@ -1,0 +1,2 @@
+windows google cloud sdk command
+    $GCSDK = "C:\Users\final\AppData\Local\Google\Cloud SDK"
