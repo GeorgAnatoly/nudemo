@@ -4,4 +4,6 @@ windows google cloud sdk command
     $GCSDK = "C:\Users\final\AppData\Local\Google\Cloud SDK"
     C:\Windows\system32\cmd.exe /k ""C:\Users\final\AppData\Local\Google\Cloud SDK\cloud_env.bat""
 
-public ip: 35.226.6.76
+public ip:
+
+// TODO incorporate react front end then pwa and pwa proxy
