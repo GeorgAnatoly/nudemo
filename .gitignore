@@ -37,4 +37,4 @@ maven-wrapper.properties
 MavenWrapperDownloader.java
 
 ### React ###
-src/main/react/node_modules
+src/main/react/node_modules/
