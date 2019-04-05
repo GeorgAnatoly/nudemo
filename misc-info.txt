@@ -15,3 +15,7 @@
 2. The above will look in /resources/static/ so copy React
     build directory as static to /resources/ directory.
 3. No other modification necessary - React works as normal
+
+### To Prepare React and Server for Build ###
+Delete React build, resources static and target directory
+before packaging build.
