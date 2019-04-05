@@ -38,3 +38,4 @@ MavenWrapperDownloader.java
 
 ### React ###
 src/main/react/com.example.demo/node_modules/
+src/main/react/com.example.demo/build/
