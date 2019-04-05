@@ -1,14 +1,17 @@
-public ip:
+// TODO make current react view a basic pwa
 
-// TODO incorporate react front end then pwa and pwa proxy
+***Don't use Thymeleaf - It only over-complicates things***
 
-### To Get Static Resources Working with Thymeleaf ###
+### To Serve React Front End From Build Directory File ###
+1. Create simple front end request handler controller class
+    @Controller
+    public class HomePageController {
 
-1. Move static resource to resources/static/* directory.
-    * for example: href="/manifest.json" would be in
-      /resources/static/manifest.json
-    * href="/js/main.js" would be in
-      /resources/static/js/main.js
-2. Wrap url in index.html (located in /resources/templates/)
-    in th:href="@{...}"
-    * th:href="@{manifest.json}"
+        @GetMapping
+        public String index() {
+            return "index.html";
+        }
+    }
+2. The above will look in /resources/static/ so copy React
+    build directory as static to /resources/ directory.
+3. No other modification necessary - React works as normal
