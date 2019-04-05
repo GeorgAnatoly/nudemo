@@ -1,9 +1,14 @@
-// TODO can't get damn google cloud sdk to work in IDE terminal
-// may need to configure it as a new terminal
-windows google cloud sdk command
-    $GCSDK = "C:\Users\final\AppData\Local\Google\Cloud SDK"
-    C:\Windows\system32\cmd.exe /k ""C:\Users\final\AppData\Local\Google\Cloud SDK\cloud_env.bat""
-
 public ip:
 
 // TODO incorporate react front end then pwa and pwa proxy
+
+### To Get Static Resources Working with Thymeleaf ###
+
+1. Move static resource to resources/static/* directory.
+    * for example: href="/manifest.json" would be in
+      /resources/static/manifest.json
+    * href="/js/main.js" would be in
+      /resources/static/js/main.js
+2. Wrap url in index.html (located in /resources/templates/)
+    in th:href="@{...}"
+    * th:href="@{manifest.json}"
