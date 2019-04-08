@@ -2,6 +2,7 @@ package com.example.demo;
 
 import com.example.demo.todo.todopersistence.ToDo;
 import io.restassured.RestAssured;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
@@ -31,5 +32,12 @@ public class DemoApplicationTests {
                 .post(API_ROOT);
 
         return API_ROOT + "/" + response.jsonPath().get("id");
+    }
+
+    // TODO finish createToDo integration test
+    @Test
+    public void whenCreateNewToDo_thenCreated() {
+        var ToDo = createToDo(1, "foo", "bar");
+
     }
 }
