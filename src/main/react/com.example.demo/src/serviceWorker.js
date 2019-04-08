@@ -112,8 +112,8 @@ function checkValidServiceWorker(swUrl, config) {
         navigator.serviceWorker.ready.then(registration => {
           registration.unregister().then(() => {
             window.location.reload();
-          });
-        });
+         });
+       });
       } else {
         // Service worker found. Proceed as normal.
         registerValidSW(swUrl, config);

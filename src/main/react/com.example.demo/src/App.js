@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-import AppInstallButton from "./appinstall/AppInstallButton";
 
 class App extends Component {
     render() {
@@ -8,7 +7,6 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-            <AppInstallButton />
         </header>
       </div>
     );
