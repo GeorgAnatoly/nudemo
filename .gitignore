@@ -40,3 +40,4 @@ MavenWrapperDownloader.java
 src/main/react/com.example.demo/node_modules/
 src/main/react/com.example.demo/build/
 src/main/resources/static/
+src/main/react/com.example.demo/npm-debug.log
