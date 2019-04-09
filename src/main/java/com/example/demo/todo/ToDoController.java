@@ -1,5 +1,7 @@
 package com.example.demo.todo;
 
+import com.example.demo.todo.errorhandling.ToDoIdMismatchException;
+import com.example.demo.todo.errorhandling.ToDoNotFoundException;
 import com.example.demo.todo.todopersistence.ToDo;
 import com.example.demo.todo.todorepository.ToDoRepository;
 import org.springframework.web.bind.annotation.*;
@@ -27,20 +29,32 @@ public class ToDoController {
     }
 
     @GetMapping("/{id}")
-    public ToDo findById(@PathVariable Long id) throws Exception{
+    public ToDo findById(@PathVariable Long id) {
         return toDoRepository.findById(id)
-                .orElseThrow(Exception::new);
+                .orElseThrow(ToDoNotFoundException::new);
     }
 
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable Long id) throws Exception {
+    public void delete(@PathVariable Long id) {
         toDoRepository.findById(id)
-                .orElseThrow(Exception::new);
+                .orElseThrow(ToDoNotFoundException::new);
         toDoRepository.deleteById(id);
     }
 
+    // TODO change put http method to post for create - add response
+    // status annotation to httpstatus.created
     @PutMapping("/create")
     public ToDo create(@RequestBody ToDo toDo) {
         return toDoRepository.save(toDo);
+    }
+
+    @PutMapping("/{id}")
+    public ToDo updateTodo(@RequestBody ToDo todo, @PathVariable Long id) {
+        if(todo.getId() != id)
+            throw new ToDoIdMismatchException();
+
+        toDoRepository.findById(id)
+                .orElseThrow(ToDoNotFoundException::new);
+        return toDoRepository.save(todo);
     }
 }
