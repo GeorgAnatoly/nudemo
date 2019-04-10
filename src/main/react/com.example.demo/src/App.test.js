@@ -7,3 +7,6 @@ it('renders without crashing', () => {
   ReactDOM.render(<App />, div);
   ReactDOM.unmountComponentAtNode(div);
 });
+
+// TODO using custom jest library build unit and integration
+// tests for units and mvc
