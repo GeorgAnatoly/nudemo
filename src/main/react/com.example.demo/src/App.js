@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import TodoView from "./basicguitodolist/TodoView.js";
 
 class App extends Component {
     render() {
@@ -7,6 +8,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
+            <TodoView />
         </header>
       </div>
     );
