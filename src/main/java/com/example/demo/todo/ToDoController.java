@@ -4,6 +4,7 @@ import com.example.demo.todo.errorhandling.ToDoIdMismatchException;
 import com.example.demo.todo.errorhandling.ToDoNotFoundException;
 import com.example.demo.todo.todopersistence.ToDo;
 import com.example.demo.todo.todorepository.ToDoRepository;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -41,9 +42,8 @@ public class ToDoController {
         toDoRepository.deleteById(id);
     }
 
-    // TODO change put http method to post for create - add response
-    // status annotation to httpstatus.created
-    @PutMapping("/create")
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
     public ToDo create(@RequestBody ToDo toDo) {
         return toDoRepository.save(toDo);
     }

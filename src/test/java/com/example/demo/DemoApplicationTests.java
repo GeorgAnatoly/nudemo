@@ -36,7 +36,7 @@ public class DemoApplicationTests {
         var response = RestAssured.given()
                 .contentType(MediaType.APPLICATION_JSON_VALUE)
                 .body(todo)
-                .put(API_ROOT + "/create");
+                .post(API_ROOT);
 
         return API_ROOT + "/" + response.jsonPath().get("id");
     }
@@ -48,8 +48,8 @@ public class DemoApplicationTests {
         var response = RestAssured.given()
                 .contentType(MediaType.APPLICATION_JSON_VALUE)
                 .body(todo)
-                .put(API_ROOT + "/create");
-        assertEquals(HttpStatus.OK.value(), response.getStatusCode());
+                .post(API_ROOT);
+        assertEquals(HttpStatus.CREATED.value(), response.getStatusCode());
 
     }
 
