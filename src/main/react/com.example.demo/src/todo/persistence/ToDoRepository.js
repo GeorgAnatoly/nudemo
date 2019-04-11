@@ -13,3 +13,5 @@ class ToDoRepository {
         return this.todolist;
     }
 }
+
+export default ToDoRepository;

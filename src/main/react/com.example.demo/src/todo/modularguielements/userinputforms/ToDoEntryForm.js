@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import ToDoDto from "../../datatransferobject/ToDoDto";
 
 class ToDoEntryForm extends Component {
 
@@ -12,6 +13,7 @@ class ToDoEntryForm extends Component {
         };
 
         this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleChange(event){
@@ -22,13 +24,20 @@ class ToDoEntryForm extends Component {
         });
     }
 
-    static handleSubmit(event) {
+     handleSubmit(event) {
         event.preventDefault();
+        let todoDto = new ToDoDto(
+            Math.random() * 10000000,
+            this.state.title,
+            this.state.task
+        );
+
+
     }
 
     render() {
         return (
-            <form onSubmit={ToDoEntryForm.handleSubmit}>
+            <form onSubmit={this.handleSubmit}>
                 <label>
                     Title:
                     <input type="text" name="title" value={this.state.title} onChange={this.handleChange}/>
