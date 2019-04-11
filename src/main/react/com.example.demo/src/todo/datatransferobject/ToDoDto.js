@@ -1,4 +1,4 @@
-class ToDo {
+class ToDoDto {
     constructor(id, title, task) {
         this.id = id;
         this.title = title;
@@ -6,4 +6,4 @@ class ToDo {
     }
 }
 
-export default ToDo;
+export default ToDoDto;

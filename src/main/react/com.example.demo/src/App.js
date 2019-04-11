@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import TodoView from "./todo/TodoView.js";
+import TopLevelToDoViewFrame from "./todo/TopLevelToDoViewFrame.js";
 
 class App extends Component {
     render() {
@@ -8,7 +8,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-            <TodoView />
+            <TopLevelToDoViewFrame />
         </header>
       </div>
     );
