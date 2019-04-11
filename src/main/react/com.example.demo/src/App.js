@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import TodoView from "./basicguitodolist/TodoView.js";
+import TodoView from "./todo/TodoView.js";
 
 class App extends Component {
     render() {
