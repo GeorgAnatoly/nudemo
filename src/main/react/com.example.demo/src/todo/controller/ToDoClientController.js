@@ -1,7 +1,14 @@
 class ToDoClientController {
+    constructor(repository) {
+        this.repository = repository;
+    }
 
-    static createToDo(todo, todoRepository) {
+    createToDo(todo) {
+        return this.repository.create(todo);
+    }
 
+    getAllToDo() {
+        return this.repository.getAll();
     }
 }
 

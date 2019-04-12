@@ -9,7 +9,8 @@ class ToDoEntryForm extends Component {
         this.state = {
                 id: 0,
                 title: "",
-                task: ""
+                task: "",
+                controller: props.controller
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -32,7 +33,13 @@ class ToDoEntryForm extends Component {
             this.state.task
         );
 
+        this.state.controller.createToDo(todoDto);
 
+        this.setState({
+            id: 0,
+            title: "",
+            task: ""
+        });
     }
 
     render() {

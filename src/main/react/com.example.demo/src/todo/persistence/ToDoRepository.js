@@ -3,13 +3,11 @@ class ToDoRepository {
         this.todolist = [];
     }
 
-    // would realistically define an ordered array with binary search
-    // at a minimum
-    setTodo(todo) {
+    create(todo) {
         this.todolist.push(todo);
     }
 
-    getAllTodo() {
+    getAll() {
         return this.todolist;
     }
 }
