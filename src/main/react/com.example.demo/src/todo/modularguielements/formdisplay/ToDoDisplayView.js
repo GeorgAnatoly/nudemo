@@ -1,40 +1,64 @@
 import React, {Component} from 'react';
+import Search from "../Search";
+import Table from "../Table";
+
+const todo = [
+    {
+        id: 0,
+        title: "First Task Title!",
+        task: "Do this task first!"
+    },
+    {
+        id: 1,
+        title: "Second Task Title!",
+        task: "Do this task second!"
+    }
+];
 
 class ToDoDisplayView extends Component {
+
     constructor(props) {
         super(props);
 
         this.state = {
-            id: 0,
-            title: "",
-            task: "",
-            controller: props.controller
+          todo,
+            searchTerm: ""
         };
-
-        ToDoDisplayView.handleSubmit = ToDoDisplayView.handleSubmit.bind(this);
-        this.handleClick = this.handleClick.bind(this);
     }
 
-    static handleSubmit(event) {
-        event.preventDefault();
-    }
+    onDismiss = (id) => {
+        const updatedTodo = this.state.todo.filter(
+            todo => todo.id !== id
+        );
 
-    handleClick() {
-        let toDo = this.state.controller.getAllToDo();
+        this.setState({todo: updatedTodo});
+    };
 
-        this.setState({title: toDo.title});
-        this.setState({task: toDo.task});
-    }
+    onSearchChange = (event) => {
+        this.setState({searchTerm: event.target.value.toUpperCase()});
+    };
 
     render() {
+        const {searchTerm, todo} = this.state;
+
         return (
-            <form onSubmit={ToDoDisplayView.handleSubmit}>
-                <h3>{this.state.title}</h3>
-                <p>{this.state.task}</p>
-                <button onClick={this.handleClick}>
-                    View All To Do
-                </button>
-            </form>
+            <div className={"page"}>
+                <div className={"interactions"}>
+            <Search
+                value={searchTerm}
+                onChange={this.onSearchChange}
+            >
+                Search
+            </Search>
+                </div>
+                <Table
+                    todo={todo}
+                    pattern={searchTerm}
+                    onDismiss={this.onDismiss}
+                />
+
+
+            </div>
         );
     }
 }

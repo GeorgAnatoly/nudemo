@@ -10,14 +10,13 @@ class ToDoEntryForm extends Component {
                 id: 0,
                 title: "",
                 task: "",
-                controller: props.controller
+                controller: props.controller,
+                searchTerm: ""
         };
 
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleChange(event){
+    handleChange = (event) => {
         let {name, value} = event.target;
 
         this.setState({
@@ -25,7 +24,7 @@ class ToDoEntryForm extends Component {
         });
     }
 
-     handleSubmit(event) {
+     handleSubmit = (event) => {
         event.preventDefault();
         let todoDto = new ToDoDto(
             Math.random() * 10000000,
@@ -42,8 +41,20 @@ class ToDoEntryForm extends Component {
         });
     }
 
+    onSearchChange = (event) => {
+        this.setState({searchTerm: event.target.value});
+
+
+    }
+
     render() {
         return (
+            <div>
+            <form>
+                <input type="text"
+                       onChange={this.onSearchChange}
+                />
+            </form>
             <form onSubmit={this.handleSubmit}>
                 <label>
                     Title:
@@ -57,6 +68,7 @@ class ToDoEntryForm extends Component {
 
                 <input type="submit" value="Submit"/>
             </form>
+            </div>
         );
     }
 }

@@ -7,3 +7,7 @@ import {register} from "./serviceWorker.js";
 ReactDOM.render(<App />, document.getElementById('root'));
 
 register();
+
+if(module.hot) {
+    module.hot.accept();
+}
