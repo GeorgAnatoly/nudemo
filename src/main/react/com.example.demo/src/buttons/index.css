@@ -1,0 +1,7 @@
+.button {
+    background: cornflowerblue;
+}
+
+.button:hover {
+    background: coral;
+}
